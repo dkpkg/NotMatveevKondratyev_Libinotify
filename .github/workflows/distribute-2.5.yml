@@ -46,10 +46,24 @@ jobs:
         if: ${{ matrix.distscript == 'dist-Linux_x86.u' }}
         run: dnf install -y glibc-devel.i686 libgcc.i686 libstdc++.i686 gcc-toolset-14-libstdc++-devel.i686
 
+      - name: Compute distribution id
+        id: dist-id
+        shell: bash
+        env:
+          REF_NAME: ${{ github.ref_name }}
+        run: |
+          version="$REF_NAME"
+          case "$version" in
+            0.20240724.0-*)
+              version="0.20240724.${version#0.20240724.0-}"
+              ;;
+          esac
+          echo "id=NotMatveevKondratyev_Libinotify@$version" >> "$GITHUB_OUTPUT"
+
       - name: Distribute Modules
         uses: diskuv/dk-distribute@v2
         with:
-          id: NotMatveevKondratyev_Libinotify@${{ startsWith(github.ref_name, '0.20240724.0-') && replace(github.ref_name, '.0-', '.') || github.ref_name }}
+          id: ${{ steps.dist-id.outputs.id }}
           pubkey: ${{ secrets.distribute_2_5_pubkey }}
           seckey: ${{ secrets.distribute_2_5_seckey }}
           options: -nosysinc
@@ -84,10 +98,24 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v6
 
+      - name: Compute distribution id
+        id: dist-id
+        shell: bash
+        env:
+          REF_NAME: ${{ github.ref_name }}
+        run: |
+          version="$REF_NAME"
+          case "$version" in
+            0.20240724.0-*)
+              version="0.20240724.${version#0.20240724.0-}"
+              ;;
+          esac
+          echo "id=NotMatveevKondratyev_Libinotify@$version" >> "$GITHUB_OUTPUT"
+
       - name: Distribute Modules
         uses: diskuv/dk-distribute@v2
         with:
-          id: NotMatveevKondratyev_Libinotify@${{ startsWith(github.ref_name, '0.20240724.0-') && replace(github.ref_name, '.0-', '.') || github.ref_name }}
+          id: ${{ steps.dist-id.outputs.id }}
           pubkey: ${{ secrets.distribute_2_5_pubkey }}
           seckey: ${{ secrets.distribute_2_5_seckey }}
           options: -nosysinc
