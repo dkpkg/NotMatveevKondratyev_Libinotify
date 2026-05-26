@@ -1,0 +1,10 @@
+prefix=${pcfiledir}/../..
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: libinotify
+Description: Linux inotify compatibility shim for dk split repos
+Version: 20240724
+Libs: -L${libdir} -linotify
+Cflags: -I${includedir}

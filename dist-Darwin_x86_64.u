@@ -1,0 +1,6 @@
+# Distribution for Darwin x86_64 NotMatveevKondratyev_Libinotify
+
+## Objects and Assets
+
+  $ get-object NotMatveevKondratyev_Libinotify.Kqueue@0.20240724.0 -s Release.Darwin_x86_64 -f ${RUNTIME}/Darwin_x86_64-Kqueue-0.20240724.0.zip
+  	est(pass)

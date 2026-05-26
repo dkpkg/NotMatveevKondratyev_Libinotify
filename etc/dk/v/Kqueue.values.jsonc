@@ -1,0 +1,82 @@
+// libinotify-kqueue on Darwin, native inotify shim on Linux.
+// Test: ./dk0 -I etc/dk/v -x commonsbase-gnu:subpath: -x commonsbase-std:subpath: --trust-local-package NotMatveevKondratyev_Libinotify get-object NotMatveevKondratyev_Libinotify.Kqueue@0.20240724.0 -s Release.Darwin_arm64 -d target/libinotify-darwin-arm64
+// Test: docker run -it --platform linux/amd64 -v $PWD:/work -w /work quay.io/pypa/manylinux_2_28_x86_64:2026.04.08-5 sh ./dk0 -v -I etc/dk/v -I /work/CommonsBase_GNU/etc/dk/v -I /work/CommonsBase_Std/etc/dk/v --trust-local-package NotMatveevKondratyev_Libinotify --trust-local-package CommonsBase_GNU --trust-local-package CommonsBase_Std get-object NotMatveevKondratyev_Libinotify.Kqueue@0.20240724.0 -s Release.Linux_x86_64 -d target/libinotify-linux-x86_64
+// 0.x.x version since the API (libinotify) is stable across releases.
+{
+    "$schema": "https://github.com/diskuv/dk/raw/refs/heads/V2_5/etc/jsonschema/dk-values.json",
+    "schema_version": {
+        "major": 1,
+        "minor": 0
+    },
+    "forms": [
+        {
+            "id": "NotMatveevKondratyev_Libinotify.Kqueue@0.20240724.0",
+            "precommands": {
+                "sequential": true,
+                "private": [
+                    "get-asset NotMatveevKondratyev_Libinotify.Kqueue.Bundle@0.20240724.0 -p libinotify-20240724.tar.gz -f libinotify-20240724.tar.gz",
+                    "get-asset NotMatveevKondratyev_Libinotify.Kqueue.Bundle@0.20240724.0 -p build-libinotify.sh -f build-libinotify.sh",
+                    "get-asset NotMatveevKondratyev_Libinotify.Kqueue.Bundle@0.20240724.0 -p inotify-shim.c -f inotify-shim.c",
+                    "get-asset NotMatveevKondratyev_Libinotify.Kqueue.Bundle@0.20240724.0 -p libinotify.pc -f libinotify.pc",
+                    "get-asset NotMatveevKondratyev_Libinotify.Kqueue.Bundle@0.20240724.0 -p sys/inotify.h -f inotify.h"
+                ]
+            },
+            "function": {
+                "commands": [
+                    [
+                        "/bin/sh", "-c",
+                        "\"tar -xzf libinotify-20240724.tar.gz --strip-components=1 && ./configure --disable-dependency-tracking --host=aarch64-apple-darwin 'CC=clang -arch arm64' --prefix=${SLOTABS.Release.Darwin_arm64} && MAKE=$(get-object CommonsBase_GNU.Make@4.4.1 -s Release.execution_abi -e bin/make -d :)/bin/make${.exe.execution} && $MAKE && $MAKE install\""
+                    ],
+                    [
+                        "/bin/sh", "-c",
+                        "\"tar -xzf libinotify-20240724.tar.gz --strip-components=1 && ./configure --disable-dependency-tracking --host=x86_64-apple-darwin 'CC=clang -arch x86_64' --prefix=${SLOTABS.Release.Darwin_x86_64} && MAKE=$(get-object CommonsBase_GNU.Make@4.4.1 -s Release.execution_abi -e bin/make -d :)/bin/make${.exe.execution} && $MAKE && $MAKE install\""
+                    ],
+                    [
+                        "/bin/sh", "build-libinotify.sh", "${SLOTABS.Release.Linux_x86_64}", "-m64"
+                    ],
+                    [
+                        "/bin/sh", "build-libinotify.sh", "${SLOTABS.Release.Linux_x86}", "-m32"
+                    ],
+                    [
+                        "/bin/sh", "build-libinotify.sh", "${SLOTABS.Release.Linux_arm64}", "-march=armv8-a"
+                    ],
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s Release.execution_abi -m ./coreutils.exe -e coreutils.exe -f coreutils.exe)",
+                        "rm", "-rf", "${SLOT.request}/share"
+                    ]
+                ]
+            },
+            "outputs": {
+                "assets": [
+                    {
+                        "slots": [
+                            "Release.Darwin_arm64", "Release.Darwin_x86_64"
+                        ],
+                        "paths": [
+                            "include/sys/inotify.h",
+                            "lib/libinotify.0.dylib",
+                            "lib/libinotify.a",
+                            "lib/libinotify.dylib",
+                            "lib/libinotify.la",
+                            "lib/pkgconfig/libinotify.pc"
+                        ]
+                    },
+                    {
+                        "slots": [
+                            "Release.Linux_x86_64", "Release.Linux_x86", "Release.Linux_arm64"
+                        ],
+                        "paths": [
+                            "include/sys/inotify.h",
+                            "lib/libinotify.a",
+                            "lib/libinotify.la",
+                            "lib/libinotify.so",
+                            "lib/libinotify.so.0",
+                            "lib/libinotify.so.0.0.0",
+                            "lib/pkgconfig/libinotify.pc"
+                        ]
+                    }
+                ]
+            }
+        }
+    ]
+}

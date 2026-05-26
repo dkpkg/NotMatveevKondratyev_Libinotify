@@ -1,0 +1,6 @@
+# Distribution for Linux x86 NotMatveevKondratyev_Libinotify
+
+## Objects and Assets
+
+  $ get-object NotMatveevKondratyev_Libinotify.Kqueue@0.20240724.0 -s Release.Linux_x86 -f ${RUNTIME}/Linux_x86-Kqueue-0.20240724.0.zip
+  	est(pass)

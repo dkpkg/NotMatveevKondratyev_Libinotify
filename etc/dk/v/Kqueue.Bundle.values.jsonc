@@ -1,0 +1,72 @@
+// Test: ./dk0 --autofix --trust-local-package NotMatveevKondratyev_Libinotify -I etc/dk/v get-bundle NotMatveevKondratyev_Libinotify.Kqueue.Bundle@0.20240724.0 -d target/libinotifykqueue-src
+// 0.x.x version since the API (libinotify) is stable across releases.
+{
+    "$schema": "https://github.com/diskuv/dk/raw/refs/heads/V2_5/etc/jsonschema/dk-values.json",
+    "schema_version": {
+        "major": 1,
+        "minor": 0
+    },
+    "bundles": [
+        {
+            "id": "NotMatveevKondratyev_Libinotify.Kqueue.Bundle@0.20240724.0",
+            "listing": {
+                "origins": [
+                    {
+                        "name": "libinotify-kqueue",
+                        "mirrors": [
+                            "https://github.com/libinotify-kqueue/libinotify-kqueue/releases/download/20240724"
+                        ]
+                    },
+                    {
+                        "name": "workspace-linux-assets",
+                        "mirrors": [
+                            "cell://root/assets/linux"
+                        ]
+                    }
+                ]
+            },
+            "assets": [
+                {
+                    "origin": "libinotify-kqueue",
+                    "path": "libinotify-20240724.tar.gz",
+                    "checksum": {
+                        "sha256": "5cc3fb7af407b17b7daa871cc98bb882716c4b5c296fadfb66bfe86c37cc599c"
+                    },
+                    "size": 462788
+                },
+                {
+                    "origin": "workspace-linux-assets",
+                    "path": "build-libinotify.sh",
+                    "checksum": {
+                        "sha256": "355d55696ce729f25c1e1772dece3b86a392e862b9867cd7729e0a5a05936668"
+                    },
+                    "size": 892
+                },
+                {
+                    "origin": "workspace-linux-assets",
+                    "path": "inotify-shim.c",
+                    "checksum": {
+                        "sha256": "ced368198c581403290669de5e9bc8d9941b2a1f55a0b62913bbaf3131bc377a"
+                    },
+                    "size": 471
+                },
+                {
+                    "origin": "workspace-linux-assets",
+                    "path": "libinotify.pc",
+                    "checksum": {
+                        "sha256": "0a7aa9122d2ba5fa6af50108e808ffcde43edb28f41960c2a65ce2e254ef6206"
+                    },
+                    "size": 256
+                },
+                {
+                    "origin": "workspace-linux-assets",
+                    "path": "sys/inotify.h",
+                    "checksum": {
+                        "sha256": "eb4bfc4191e9291b52911b75658a7a4a6e4e64e1ee3a9464b9e4ed2919443b4e"
+                    },
+                    "size": 44
+                }
+            ]
+        }
+    ]
+}

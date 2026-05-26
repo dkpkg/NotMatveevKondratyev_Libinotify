@@ -1,0 +1,18 @@
+# Distribution for Linux x86_64 NotMatveevKondratyev_Libinotify
+
+## Objects and Assets
+
+  $ get-object NotMatveevKondratyev_Libinotify.Kqueue@0.20240724.0 -s Release.Linux_x86_64 -f ${RUNTIME}/Linux_x86_64-Kqueue-0.20240724.0.zip
+  [error 917b6e5f]: Could not run unified shell command.
+  
+      ╭──▶ etc/dk/v/Kqueue.values.jsonc:18.32-18.115
+      │
+   18 │                    "get-asset NotMatveevKondratyev_Libinotify.Apparatus@1.0.0 -p assets/linux/build-libinotify.sh -f build-libinotify.sh",
+      •                               ┬──────────────────────────────────────────────────────────────────────────────────
+      •                               ╰╸ Could not get asset because it does not exist.
+      •
+      │ Hint: Consider running the individual command using the command line: `dk0 --verbose get-object NotMatveevKondratyev_Lib...`
+      │ Hint: It may be that the asset `assets/linux/build-libinotify.sh` does not exist in the bundle `NotMatveevKondratyev_Libinotify.Apparatus@1.0.0+bn-20250101000000`. Consider running `get-bundle NotMatveevKondratyev_Libinotify.Apparatus@1.0.0 -d target/troubleshoot` in dk (or the dk0 reference implementation) to inspect the assets available in the bundle.
+  ────╯
+  
+  [exit 1]
