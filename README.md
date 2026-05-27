@@ -32,9 +32,9 @@ Local validation of the Darwin build recipe expects sibling checkouts of
 ```
 
 For tag-driven GitHub Actions validation, push package-native tags like
-`0.20240724.0-<timestamp>`. The workflow keeps those tags on the public package
-line while mapping the internal distribution version onto the repository's
-existing `2.5.*` release lineage.
+`2.5.0-<timestamp>`. The workflow maps those prerelease tags onto internal
+distribution ids like `2.5.<timestamp>`, matching the repository's `2.5.*`
+release lineage.
 
 ## Linux shim notes
 
