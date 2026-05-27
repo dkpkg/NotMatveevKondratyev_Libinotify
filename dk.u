@@ -1,0 +1,49 @@
+# NotMatveevKondratyev_Libinotify
+## workspace
+
+  %% import { type="github-l2", repo="dkpkg/CommonsBase_GNU" }
+  'import'
+  'github-l2'
+  { {
+      'CommonsBase_GNU', '2.5.202605232350', {
+        'blake2b-256:964a6c849d50821e1db13b6f4e37939385e02e617272d2fada3490c30b75c78c',
+        'sha256:d908f801e1b1ad8fd6a40259e2e1fec3bb7fc4dc52d57a40c9815adff42eb217',
+        'sha1:5a09d05d99e2602df5e5ec24b93eece870065c0f'
+      } },
+    {
+      'CommonsBase_FileMagic', '2.5.202605231534', {
+        'blake2b-256:44cbc5f606c8592bbf425aa8690432009d001983e8adfc6ae8775702b5112dce',
+        'sha256:06127fe38bffb9d0f900bb97064b61659edb3fd88ffd9b21f3943cbaf825991a',
+        'sha1:01b319abb7d4a136b9f744fe58d303bb2d370ac5'
+      } },
+    {
+      'CommonsBase_Std', '2.5.202605230053', {
+        'blake2b-256:45d0f9a049ef179b55e4a4b1adc426d8bcbdaaf8901d9d78b0315b9388f89d3c',
+        'sha256:7f0e42ea1894c4f7108d0c028df48fdd63d528ded76b9b3e195e08f7306d2a67',
+        'sha1:a3d27aedec716fedfd8837f7d4fac419ccd5771e'
+      } } }
+
+## Assets
+
+### NotMatveevKondratyev_Libinotify.Apparatus@1.0.0
+
+  % unified.asset { name="BuildLibinotify", file="assets/linux/build-libinotify.sh" }
+  'asset'
+  '892'
+  'sha256:355d55696ce729f25c1e1772dece3b86a392e862b9867cd7729e0a5a05936668'
+
+  % unified.asset { name="InotifyShim", file="assets/linux/inotify-shim.c" }
+  'asset'
+  '471'
+  'sha256:ced368198c581403290669de5e9bc8d9941b2a1f55a0b62913bbaf3131bc377a'
+
+  % unified.asset { name="LibinotifyPc", file="assets/linux/libinotify.pc" }
+  'asset'
+  '256'
+  'sha256:0a7aa9122d2ba5fa6af50108e808ffcde43edb28f41960c2a65ce2e254ef6206'
+
+  % unified.asset { name="LinuxHeader", file="assets/linux/sys/inotify.h" }
+  'asset'
+  '44'
+  'sha256:eb4bfc4191e9291b52911b75658a7a4a6e4e64e1ee3a9464b9e4ed2919443b4e'
+

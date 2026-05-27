@@ -1,0 +1,7 @@
+# Distribution for Linux x86_64 NotMatveevKondratyev_Libinotify
+
+## Objects and Assets
+
+  $ get-object NotMatveevKondratyev_Libinotify.Kqueue@0.20240724.0 -s Release.Linux_x86_64 -f ${RUNTIME}/Linux_x86_64-Kqueue-0.20240724.0.zip
+  \test(pass)
+  \dk.object(abi: "Release.Linux_x86_64", value-id: "o76znk72qchmbntt23xa37dofcwmw7flg3jaklsz6rl65qmsmub5a")\;
