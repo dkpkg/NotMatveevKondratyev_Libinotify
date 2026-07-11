@@ -25,11 +25,11 @@
                 "commands": [
                     [
                         "/bin/sh", "-c",
-                        "\"tar -xzf libinotify-20240724.tar.gz --strip-components=1 && ./configure --disable-dependency-tracking --host=aarch64-apple-darwin 'CC=clang -arch arm64 -Wno-unguarded-availability-new' --prefix=${SLOTABS.Release.Darwin_arm64} && MAKE=$(get-object CommonsBase_GNU.Make@4.4.1 -s Release.execution_abi -e bin/make -d :)/bin/make${.exe.execution} && $MAKE && $MAKE install\""
+                        "\"export ZERO_AR_DATE=1 && tar -xzf libinotify-20240724.tar.gz --strip-components=1 && ./configure --disable-dependency-tracking --host=aarch64-apple-darwin 'CC=clang -arch arm64 -Wno-unguarded-availability-new' --prefix=${SLOTABS.Release.Darwin_arm64} && MAKE=$(get-object CommonsBase_GNU.Make@4.4.1 -s Release.execution_abi -e bin/make -d :)/bin/make${.exe.execution} && $MAKE && $MAKE install\""
                     ],
                     [
                         "/bin/sh", "-c",
-                        "\"tar -xzf libinotify-20240724.tar.gz --strip-components=1 && ./configure --disable-dependency-tracking --host=x86_64-apple-darwin 'CC=clang -arch x86_64 -Wno-unguarded-availability-new' --prefix=${SLOTABS.Release.Darwin_x86_64} && MAKE=$(get-object CommonsBase_GNU.Make@4.4.1 -s Release.execution_abi -e bin/make -d :)/bin/make${.exe.execution} && $MAKE && $MAKE install\""
+                        "\"export ZERO_AR_DATE=1 && tar -xzf libinotify-20240724.tar.gz --strip-components=1 && ./configure --disable-dependency-tracking --host=x86_64-apple-darwin 'CC=clang -arch x86_64 -Wno-unguarded-availability-new' --prefix=${SLOTABS.Release.Darwin_x86_64} && MAKE=$(get-object CommonsBase_GNU.Make@4.4.1 -s Release.execution_abi -e bin/make -d :)/bin/make${.exe.execution} && $MAKE && $MAKE install\""
                     ],
                     [
                         "/bin/sh", "build-libinotify.sh", "${SLOTABS.Release.Linux_x86_64}", "-m64"

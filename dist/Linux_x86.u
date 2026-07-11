@@ -4,4 +4,4 @@
 
   $ get-object NotMatveevKondratyev_Libinotify.Kqueue@0.20240724.0 -s Release.Linux_x86 -f ${RUNTIME}/Linux_x86-Kqueue-0.20240724.0.zip
   \test(pass)
-  \dk.object(abi: "Release.Linux_x86", value-id: "oyhry2byvy7z5tnjf7ynka4yprw7atjtaknek6gbclestots22ela")\;
+  \dk.object(abi: "Release.Linux_x86", value-id: "oho2kmntguy4r42vp4uayqilc3dwwuvjvnhnmjqixncznktgwa22q")\;

@@ -77,8 +77,8 @@
 
   % unified.asset { name="BuildLibinotify", file="assets/linux/build-libinotify.sh" }
   'asset'
-  '892'
-  'sha256:355d55696ce729f25c1e1772dece3b86a392e862b9867cd7729e0a5a05936668'
+  '893'
+  'sha256:ed1db12ce379e9d995521c6d0b9a41419c7f2dd12038092eedf418e6492e4a35'
 
   % unified.asset { name="InotifyShim", file="assets/linux/inotify-shim.c" }
   'asset'

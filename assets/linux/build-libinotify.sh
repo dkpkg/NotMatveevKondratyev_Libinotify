@@ -10,7 +10,7 @@ gcc "$@" -fPIC -O2 -c inotify-shim.c -o build/inotify-shim.o
 gcc "$@" -shared -Wl,-soname,libinotify.so.0 -o "$slot/lib/libinotify.so.0.0.0" build/inotify-shim.o
 ln -sf libinotify.so.0.0.0 "$slot/lib/libinotify.so.0"
 ln -sf libinotify.so.0 "$slot/lib/libinotify.so"
-ar rcs "$slot/lib/libinotify.a" build/inotify-shim.o
+ar rcsD "$slot/lib/libinotify.a" build/inotify-shim.o
 cat > "$slot/lib/libinotify.la" <<'EOF'
 # libinotify.la - a libtool library file
 dlname='libinotify.so.0'
