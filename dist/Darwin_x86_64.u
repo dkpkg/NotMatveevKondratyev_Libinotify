@@ -4,4 +4,4 @@
 
   $ get-object NotMatveevKondratyev_Libinotify.Kqueue@0.20240724.0 -s Release.Darwin_x86_64 -f ${RUNTIME}/Darwin_x86_64-Kqueue-0.20240724.0.zip
   \test(pass)
-  \dk.object(abi: "Release.Darwin_x86_64", value-id: "odxkj6flecf7rfd64exdadfno7de74v2xud52ivosknsfdms6wjfa")\;
+  \dk.object(abi: "Release.Darwin_x86_64", value-id: "ohpng5arw6dtjjof6op3yyc7nq6wlqt2orhi5k6erotoiidqtucdq")\;
