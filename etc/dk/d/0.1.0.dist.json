@@ -1,0 +1,34 @@
+{
+  "continuations": {
+    "attestation": {
+      "openbsd_signify": {
+        "signature": "untrusted comment: signed by key 3c6486028c72c191\nRWQ8ZIYCjHLBkf7U78G5tf6HSRnbiPTB5RhAsvkYuW3m+3GtrsCFCBmuwXxTmUrlZ/GrDoW4lxFxtLnCIbWCii1oGFEdzP7N/g4=\n"
+      }
+    },
+    "continuations_to_sign": {
+      "0.2": {
+        "application": { "name": "dk0", "version": "2.4.2+rev-253" },
+        "openbsd_signify": {
+          "public_key": "untrusted comment: NotMatveevKondratyev_Libinotify-0.2\nRWRfX5BshcHAzgSh8hmpB3aWUKFfumCxGNDN3zd/p5owtEeNP/TNCxbh\n"
+        }
+      },
+      "1.0": {
+        "application": { "name": "dk0", "version": "2.4.2+rev-253" },
+        "openbsd_signify": {
+          "public_key": "untrusted comment: NotMatveevKondratyev_Libinotify-1.0\nRWRSFNWNPdu9IreudaZRWLwSF8xAuOyhcUCNu8RUb+Gm7lKWkNxFxQVF\n"
+        }
+      }
+    }
+  },
+  "id": "NotMatveevKondratyev_Libinotify@0.1.0",
+  "license": { "spdx": "Apache-2.0" },
+  "producer": {
+    "application": { "name": "dk0", "version": "2.4.2+rev-253" },
+    "github_slsa_v1_l2": {
+      "repository": "dkpkg/NotMatveevKondratyev_Libinotify"
+    },
+    "openbsd_signify": {
+      "public_key": "untrusted comment: NotMatveevKondratyev_Libinotify-0.1\nRWQ8ZIYCjHLBkWuwdHs83vRZLgR/9kMUdZYVqpACzBeYHuPwMZi+Ojjn\n"
+    }
+  }
+}
