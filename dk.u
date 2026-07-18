@@ -1,4 +1,21 @@
 # NotMatveevKondratyev_Libinotify
+
+## Overview
+
+Packages the `libinotify-kqueue` inotify implementation for Darwin and BSD, with a native Linux shim that preserves the same `libinotify` interface across platforms.
+
+`NotMatveevKondratyev_Libinotify` builds the upstream `libinotify-kqueue`
+sources (release 20240724) on Darwin and BSD, producing the standard
+`libinotify` shared and static libraries plus `<sys/inotify.h>`. On Linux
+it instead compiles a tiny Diskuv-authored compatibility library that
+forwards the `inotify_*` calls to native Linux inotify syscalls, so
+downstream packages see an identical `libinotify` surface on every
+supported platform.
+
+## License
+
+MIT AND Apache-2.0
+
 ## workspace
   %% actual_version("2.4.2.279")
 
