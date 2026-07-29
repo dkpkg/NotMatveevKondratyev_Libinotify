@@ -17,7 +17,7 @@ supported platform.
 MIT AND Apache-2.0
 
 ## workspace
-  %% actual_version("2.4.2.279")
+  %% actual_version("2.4.2.296")
   'actual_version'
   '2.4.2.279'
 
